@@ -1,0 +1,19 @@
+name: Desplegando app
+on:
+    push:
+        branches:
+            - master
+jobs:
+    deploy-pruebas:
+        uses: ./github/workflows/reutilizable.yml
+        with:
+            ambiente: pruebas
+            ip-server: "1.2.3.4"
+
+    deploy-prod:
+        uses: ./github/workflows/reutilizable.yml
+        with:
+            ambiente: produccion
+            ip-server: "4.3.2.1"
+
+    

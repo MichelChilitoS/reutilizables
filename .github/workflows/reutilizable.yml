@@ -1,0 +1,24 @@
+name: Reutilizable
+on:
+    workflow_call: 
+        inputs:
+            ambiente:
+                description: "Define el ambiente , si es pruebas o produccion"
+                required: true
+                type: string
+            ip-server:
+                description: "Define la ip del servidor"
+                required: true
+                type: string
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Bajando artefactos
+              uses: actions/checkout@v3
+
+            - name: Deploy app
+              run: |
+                echo "Desplegando en el ambiente ${{ inputs.ambiente }}"
+                echo "Ip del servidor ${{ inputs.ip-server }}"
