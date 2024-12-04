@@ -11,7 +11,7 @@ jobs:
             ip-server: "1.2.3.4"
 
     deploy-prod:
-        uses: ./github/workflows/reutilizable.yml
+        uses: ./.github/workflows/reutilizable.yml
         with:
             ambiente: produccion
             ip-server: "4.3.2.1"
